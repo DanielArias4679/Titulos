@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, Users, BookOpen, Heart } from 'lucide-react';
 
-const StructureSection = ({ onDownloadCurriculum }) => {
+const StructureSection = () => {
   const modules = [
     {
       icon: Users,
@@ -22,7 +22,7 @@ const StructureSection = ({ onDownloadCurriculum }) => {
   ];
 
   return (
-    <section className="py-20 px-4" style={{backgroundColor: '#e1f5fe'}}>
+    <section className="py-20 px-4" style={{ backgroundColor: '#e1f5fe' }}>
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,26 +35,31 @@ const StructureSection = ({ onDownloadCurriculum }) => {
             <span className="text-2xl">🧩</span>
             <span className="font-semibold text-blue-800">Estructura y Contenidos</span>
           </div>
-          
+
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Módulos diseñados para 
+            Módulos diseñados para
             <span className="block text-blue-600">transformar tu gestión</span>
           </h2>
-          
+
           <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mb-10">
-            La propuesta se organiza en 3 ejes temáticos y 12 módulos, más una evaluación final. 
+            La propuesta se organiza en 3 ejes temáticos y 12 módulos, más una evaluación final.
             Cada módulo articula teoría, herramientas prácticas y normativa vigente.
           </p>
 
-          <motion.button
-            onClick={onDownloadCurriculum}
-            className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all duration-300 flex items-center gap-3 mx-auto group"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Download className="w-5 h-5 group-hover:animate-bounce" />
-            Descargar Diseño Curricular
-          </motion.button>
+          {/* Botón corregido */}
+          <div className="flex justify-center">
+            <motion.a
+              href="/docs/DisenoCurricular.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all duration-300 group"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Download className="w-5 h-5 group-hover:animate-bounce" />
+              <span>Descargar Diseño Curricular</span>
+            </motion.a>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -70,12 +75,10 @@ const StructureSection = ({ onDownloadCurriculum }) => {
                 className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
                 whileHover={{ y: -5 }}
               >
-                <motion.div 
+                <motion.div
                   className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300"
-                  animate={{ 
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{ 
+                  animate={{ scale: [1, 1.1, 1] }}
+                  transition={{
                     duration: 2,
                     repeat: Infinity,
                     ease: "easeInOut",
@@ -84,11 +87,11 @@ const StructureSection = ({ onDownloadCurriculum }) => {
                 >
                   <IconComponent className="w-10 h-10 text-white" />
                 </motion.div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center group-hover:text-blue-600 transition-colors duration-300">
                   {module.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed text-center">
                   {module.description}
                 </p>

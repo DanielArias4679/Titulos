@@ -61,15 +61,15 @@ const CertificationSection = ({ onOpenCertification }) => {
               recibirás toda la información necesaria para comenzar tu formación.
             </p>
 
-            <motion.button
-              onClick={onOpenCertification}
-              className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-12 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3 mx-auto group"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <CheckCircle2 className="w-6 h-6 group-hover:animate-pulse" />
-              QUIERO CERTIFICARME
-            </motion.button>
+            <a
+  href="https://forms.gle/bCRSzDYAd1mLcXyc6"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full bg-green-500 text-white py-4 px-6 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+>
+  ✅ QUIERO CERTIFICARME
+</a>
+
 
             <div className="flex items-center justify-center gap-4 mt-8 pt-8 border-t border-gray-200">
               <Users className="w-5 h-5 text-green-500" />
